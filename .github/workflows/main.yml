@@ -4,7 +4,7 @@ on:
   push:
   schedule:
   # 定时任务，在每天的5点推送天气信息到邮箱
-    - cron: '15 15 * * *'
+    - cron: '53 15 * * *'
 
 jobs:
   bot:
