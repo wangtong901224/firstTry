@@ -14,6 +14,6 @@ jobs:
       - name: 'Checkout codes'
         uses: actions/checkout@v1
     # 执行仓库中的脚本文件
-      - name: 'Get Weather'
+      - name: 'Qiandao job'
         run: sh QD.sh
 
