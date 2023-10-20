@@ -8,7 +8,7 @@ on:
 
 jobs:
   bot:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     # 首先copy git仓库到虚拟机上
       - name: 'Checkout codes'
