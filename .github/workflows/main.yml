@@ -15,5 +15,5 @@ jobs:
         uses: actions/checkout@v1
     # 执行仓库中的脚本文件
       - name: 'Get Weather'
-        run: bash ./QD.sh
+        run: sh QD.sh
 
