@@ -1,11 +1,12 @@
 #!/bin/bash
 sckey='SCT227039T75JQ4c5X0Qew9RSmwuoMh6Zf'
-cookie='_ga=GA1.2.79981967.1711701586; _ga_CZFVKMNT9J=GS1.1.1716166742.3.1.1716166757.0.0.0; koa:sess=eyJ1c2VySWQiOjQxNzE3NiwiX2V4cGlyZSI6MTc0OTYwODg3ODQzMCwiX21heEFnZSI6MjU5MjAwMDAwMDB9; koa:sess.sig=ZFADJzoxNxDhGJoQVreRyo0YYGU'
+cookie='koa:sess=eyJ1c2VySWQiOjQxNzE3NiwiX2V4cGlyZSI6MTc3NjMzMzgwNzkxOCwiX21heEFnZSI6MjU5MjAwMDAwMDB9; koa:sess.sig=EABiYyhIbD50ea1iNWptarduLN4'
 referer='https://glados.rocks/api/user/checkin'
 origin='https://glados.rocks'
 useragent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
+authorization='12833298897138375142270069988788-864-1536'
 echo '------------------sign------------------'
-title=$(curl -H "cookie:$cookie" -H "referer:$referer" -H "origin:$origin" -H "user-agent:$useragent" -H 'content-type:application/json;charset=UTF-8' -d '{"token": "glados.one"}' -X POST 'https://glados.one/api/user/checkin' | grep -Eo '"message":"[^"]*"')
+title=$(curl -H "cookie:$cookie" -H "referer:$referer" -H "origin:$origin" -H "user-agent:$useragent" -H "Authorization:$authorization" -H 'content-type:application/json;charset=UTF-8' -d '{"token": "glados.one"}' -X POST 'https://glados.one/api/user/checkin' | grep -Eo '"message":"[^"]*"')
 echo $title
 title=$(echo ${title#*:} | sed 's/\"//g')
 echo '-----------------status-----------------'
