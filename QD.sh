@@ -5,8 +5,9 @@ referer='https://glados.cloud/api/user/checkin'
 origin='https://glados.cloud'
 useragent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
 authorization='12833298897138375142270069988788-864-1536'
+authority='glados.cloud'
 echo '------------------sign------------------'
-title=$(curl -H "cookie:$cookie" -H "referer:$referer" -H "origin:$origin" -H "user-agent:$useragent" -H "Authorization:$authorization" -H 'content-type:application/json;charset=UTF-8' -d '{"token": "glados.cloud"}' -X POST 'https://glados.cloud/api/user/checkin' | grep -Eo '"message":"[^"]*"')
+title=$(curl -H "cookie:$cookie" -H "referer:$referer" -H "origin:$origin" -H "user-agent:$useragent" -H "authority:$authorization" -H 'content-type:application/json;charset=UTF-8' -d '{"token": "glados.cloud"}' -X POST 'https://glados.cloud/api/user/checkin' | grep -Eo '"message":"[^"]*"')
 echo $title
 title=$(echo ${title#*:} | sed 's/\"//g')
 echo '-----------------status-----------------'
